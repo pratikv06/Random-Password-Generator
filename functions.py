@@ -1,5 +1,7 @@
+from tkinter import messagebox 
 import string
 import random
+
 
 def generate_random_password(pwd_length, result):
     ''' Generating Password '''
@@ -17,10 +19,15 @@ def button_click(var, result):
     elif user_choice == 3:
         pwd_length = random.randint(13,16)
     else:
-        pwd_length = 10
+        select_warning()
+        return
     generated_password = generate_random_password(pwd_length, result)
 
 def update_password(generated_password, result):
     ''' Displaying password on app '''
     result.delete('0','end')
     result.insert(0, generated_password)
+
+
+def select_warning(): 
+    messagebox.showwarning("Warning","Please select one of the option")  
