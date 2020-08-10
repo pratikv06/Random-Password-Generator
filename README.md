@@ -3,8 +3,8 @@
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Sample](#sample)
-	- [Version 1.0](##version-10)
-	- [Version 1.1](##verion-11)
+	- [Version 1.0](#version-10)
+	- [Version 1.1](#verion-11)
 
 ## General info
 This project is Generating Random Password.
