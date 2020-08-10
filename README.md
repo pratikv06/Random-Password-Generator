@@ -19,3 +19,6 @@ To run this project, download it locally:
 $ cd /file/path
 $ py app.py
 ```
+
+## Sample
+![](images/sample.gif)
