@@ -21,8 +21,8 @@ $ py app.py
 ```
 
 ## Sample
-### V1.0
+### Version 1.0
 ![](images/Sample.gif)
 
-### V1.1
+### Version 1.1
 ![](images/Sample2.gif)
