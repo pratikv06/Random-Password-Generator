@@ -2,7 +2,8 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
-* [Sample] (#sample)
+* [Sample](#sample)
+	- [Version 1.0](version-1.0)
 
 ## General info
 This project is Generating Random Password.
