@@ -21,4 +21,4 @@ $ py app.py
 ```
 
 ## Sample
-![](images\sample.gif)
+![](images\Sample.gif)
