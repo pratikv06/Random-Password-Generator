@@ -28,4 +28,4 @@ $ py app.py
 ![](images/Sample.gif)
 
 ### Version 1.1
-![](images/Sample2.gif)
+![](images/Warning.gif)
