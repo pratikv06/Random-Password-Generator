@@ -48,6 +48,42 @@ root.config(menu=menubar)
 
 
 
+
+# Menu Bar
+menubar = Menu(root) 
+# option1
+file = Menu(menubar, tearoff=0)   
+file.add_command(label="Open")  
+file.add_command(label="Save") 
+file.add_command(label="Clear")    
+file.add_separator()  
+file.add_command(label="Close", command=root.quit)  
+menubar.add_cascade(label="File", menu=file) 
+
+# option2
+backup = Menu(menubar, tearoff=0)
+# sub-option2.1
+import1 = Menu(backup)
+import1.add_command(label="Database")  
+import1.add_command(label="SQL")  
+import1.add_command(label="Text") 
+backup.add_cascade(label="Import as...", menu=import1, underline=0) 
+# sub-option2.2
+export = Menu(backup)
+export.add_command(label="Database")  
+export.add_command(label="SQL")  
+export.add_command(label="Text")  
+backup.add_cascade(label="Export as...", menu=export, underline=0)
+menubar.add_cascade(label="Backup", menu=backup)
+
+# option3
+menubar.add_cascade(label="About", command=about.about_app)
+
+root.config(menu=menubar)
+
+
+
+
 # App logo
 img = ImageTk.PhotoImage(Image.open(".\images\logo.png"))
 logo_panel = Label(root, image = img)
