@@ -4,7 +4,8 @@
 * [Setup](#setup)
 * [Sample](#sample)
 	- [Version 1.0](#version-10)
-	- [Version 1.0.1](#verion-101)
+	- [Version 1.0.1](#version-101)
+	- [Version 1.0.2](#version-102)
 
 ## General info
 This project is Generating Random Password.
@@ -29,3 +30,6 @@ $ py app.py
 
 ### Version 1.0.1
 ![](extra/Warning.gif)
+
+### Version 1.0.2
+![](extra/appclose.gif)
