@@ -26,10 +26,10 @@ $ py app.py
 
 ## Sample
 ### Version 1.0
-![](extra/sample.gif)
+![](extra/Sample.gif)
 
 ### Version 1.0.1
-![](extra/warning.gif)
+![](extra/Warning.gif)
 
 ### Version 1.0.2
-![](extra/appclose.gif)
+![](extra/close.gif)
