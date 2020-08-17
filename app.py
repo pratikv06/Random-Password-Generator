@@ -1,6 +1,9 @@
-import functions as func
 from tkinter import *
 from PIL import ImageTk, Image
+
+
+import func.genpass as gp
+
 
 # Description
 root = Tk()
@@ -31,7 +34,7 @@ btn_strong.grid(row=2, column=3, padx=10)
 
 # Submit Button
 btn_submit = Button(root, text="Generate", font="Helvetica 10 bold", padx=15, 
-                    command=lambda: func.button_click(var, result))
+                    command=lambda: gp.gen_pass_btn(var, result))
 btn_submit.grid(row=3, column=1, columnspan=3)
 
 # Display Password
