@@ -39,7 +39,7 @@ result = Entry(root, width=30, borderwidth=2)
 result.grid(row=4, column=1, columnspan=4, pady=5)
 
 # Status bar
-status = Label(root, text="Developed By Pratik, V1.1", bd=2, relief=SUNKEN, anchor=E)
+status = Label(root, text="Version 1.0.1", bd=2, relief=SUNKEN, anchor=E)
 status.grid(row=5, column=0, columnspan=4, sticky=W+E)
 
 root.mainloop()
