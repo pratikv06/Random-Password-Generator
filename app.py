@@ -4,7 +4,7 @@ from PIL import ImageTk, Image
 
 # Description
 root = Tk()
-root.title("Password Generator")
+root.title("Pass-Genenerator")
 root.iconbitmap(r'.\images\favicon.ico')
 root.resizable(width=False, height=False)
 root.geometry("248x232")
@@ -15,7 +15,7 @@ logo_panel = Label(root, image = img)
 logo_panel.grid(row=0, column=0, columnspan=4, sticky=W+E)
 
 # App Label
-applabel = Label(root, text = "Password Generator", font = 24)
+applabel = Label(root, text = "Pass-Generator", font = 24)
 applabel.grid(row=1, column=0, columnspan=4, sticky=W+E)
 
 # Defining Radio
