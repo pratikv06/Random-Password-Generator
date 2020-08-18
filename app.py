@@ -2,15 +2,14 @@ from tkinter import *
 from PIL import ImageTk, Image
 
 
-# import func.genpass as gp
-from func import genpass as gp, about, clear
+from func import *
+import savemod
 
 # Description
 root = Tk()
 root.title("Pass-Genenerator")
 root.iconbitmap(r'.\images\favicon.ico')
 root.resizable(width=False, height=False)
-root.geometry("248x253")
 
 
 # Menu Bar
@@ -18,7 +17,7 @@ menubar = Menu(root)
 # option1
 file = Menu(menubar, tearoff=0)   
 file.add_command(label="Open")  
-file.add_command(label="Save") 
+file.add_command(label="Save", command=lambda: savemod.save_toplevel(root, result.get())) 
 file.add_command(label="Clear", command=lambda: clear.clear_radio_pass(result, var))    
 file.add_separator()  
 file.add_command(label="Close", command=root.quit)  
@@ -65,7 +64,7 @@ btn_strong.grid(row=2, column=3, padx=10)
 
 # Submit Button
 btn_submit = Button(root, text="Generate", font="Helvetica 10 bold", padx=15, 
-                    command=lambda: gp.gen_pass_btn(var, result))
+                    command=lambda: genpass.gen_pass_btn(var, result))
 btn_submit.grid(row=3, column=1, columnspan=3)
 
 # Display Password
