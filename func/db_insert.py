@@ -27,3 +27,11 @@ def data_add(top, website, userid, password):
         result = messagebox.showinfo(title, msg)
         if result:
             top.destroy()
+
+
+def add_data1(website, userid, password):
+    conn = db.db_connect()
+    c = conn.cursor()
+    sql = "INSERT INTO user (website, username, pwd) VALUES (?, ?, ?)"
+    c.execute(sql, (website, userid, password,))
+    db.db_close(conn)

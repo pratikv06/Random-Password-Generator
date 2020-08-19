@@ -5,12 +5,9 @@ from tkinter import messagebox
 import func.database as db
 from func import *
 
-options = []
-
 def get_options(top):
     results = db_select.data_fetch()
     # Dropdwon options
-    global options
     options = []
     for res in results:
         options.append(str(res[0]) +". "+ res[1])
@@ -18,7 +15,7 @@ def get_options(top):
         res = messagebox.showinfo("Open", "No Record Found!")
         if res:
             top.destroy()
-            return
+            return ''
     return options
 
 def view_details(selected, userid, password, update_btn, delete_btn):
@@ -26,7 +23,6 @@ def view_details(selected, userid, password, update_btn, delete_btn):
     if selected.get() == '':
         messagebox.showwarning("Warning", "Select a option!")
         return
-    # print(selected.get(), results, userid.get(), password.get(), update_btn, delete_btn)
     selected = int(selected.get().split(".")[0])
     results = db_select.data_fetch_where(selected)
     for res in results:
@@ -56,42 +52,46 @@ def data_update(selected, userid, password):
         msg += "cannot be leaved blank"
         messagebox.showwarning(title, msg)
     else:
-        conn = db.db_connect()
-        c = conn.cursor()
-        sql = "UPDATE user SET username=?, pwd=? WHERE userid=?"
-        c.execute(sql, (userid, password, selected,))
-        db.db_close(conn)
-        title= "Updated"
-        msg = "Updated Sucessfully"
-        result = messagebox.showinfo(title, msg)
+        msg = messagebox.askquestion("Update", "Are you Sure you want to update?")
+        if msg == 'yes':
+            conn = db.db_connect()
+            c = conn.cursor()
+            sql = "UPDATE user SET username=?, pwd=? WHERE userid=?"
+            c.execute(sql, (userid, password, selected,))
+            db.db_close(conn)
+            title= "Updated"
+            msg = "Updated Sucessfully"
+            result = messagebox.showinfo(title, msg)
 
 
 def data_delete(top, selected, drop, userid, password, update_btn, delete_btn):
     ''' Deleting record from database '''
-    del1 = int(selected.get().split(".")[0])
-    conn = db.db_connect()
-    c = conn.cursor()
-    sql = "DELETE FROM user WHERE userid=?"
-    c.execute(sql, (del1,))
-    db.db_close(conn)
-    title= "Deleted"
-    msg = "Deleted Sucessfully"
-    result = messagebox.showinfo(title, msg)
+    msg = messagebox.askquestion("Delete", "Are you Sure you want to delete?")
+    if msg == 'yes':
+        del1 = int(selected.get().split(".")[0])
+        conn = db.db_connect()
+        c = conn.cursor()
+        sql = "DELETE FROM user WHERE userid=?"
+        c.execute(sql, (del1,))
+        db.db_close(conn)
+        title= "Deleted"
+        msg = "Deleted Sucessfully"
+        result = messagebox.showinfo(title, msg)
 
-    # Changing state of widgets
-    userid.delete(0, END)
-    password.delete(0, END)
-    userid['state'] = DISABLED
-    password['state'] = DISABLED
-    update_btn['state'] = DISABLED
-    delete_btn['state'] = DISABLED
+        # Changing state of widgets
+        userid.delete(0, END)
+        password.delete(0, END)
+        userid['state'] = DISABLED
+        password['state'] = DISABLED
+        update_btn['state'] = DISABLED
+        delete_btn['state'] = DISABLED
 
-    options = []
-    if options == '':
-        return
-    options = get_options(top)
-    drop = OptionMenu(top, selected, *options)
-    drop.config(width=30)
-    drop.grid(row=0, column=0, columnspan=3, padx=5, pady=5, sticky=W)
-    selected.set('')
-    
+        options = []
+        if options == '':
+            return
+        options = get_options(top)
+        drop = OptionMenu(top, selected, *options)
+        drop.config(width=30)
+        drop.grid(row=0, column=0, columnspan=3, padx=5, pady=5, sticky=W)
+        selected.set('')
+

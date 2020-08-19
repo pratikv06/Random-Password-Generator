@@ -3,10 +3,6 @@
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Sample](#sample)
-	- [Version 1.0](#version-10)
-	- [Version 1.0.1](#version-101)
-	- [Version 1.0.2](#version-102)
-	- [Version 1.0.3](#version-103)
 
 ## General info
 This project is Generating Random Password.
@@ -26,14 +22,11 @@ $ py app.py
 ```
 
 ## Sample
-### Version 1.0
+- Generating Password
 ![](extra/Sample.gif)
 
-### Version 1.0.1
+- Generating password without selecting any option
 ![](extra/Warning.gif)
 
-### Version 1.0.2
-![](extra/close.gif)
-
-### Version 1.0.2
+- Clearing the selected option
 ![](extra/clear.gif)

@@ -6,7 +6,7 @@ def about_app():
 App that generate random passwords... 
 
 
-App. Version:\t 1.0.5
-Developed By:\t Pratik 
+App. Version:  1.0.6
+Developed By:  Pratik 
     '''
     messagebox.showinfo(title, message)
