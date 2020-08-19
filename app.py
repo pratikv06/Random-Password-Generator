@@ -3,7 +3,7 @@ from PIL import ImageTk, Image
 
 
 from func import *
-import savemod
+import savemod, openmod
 
 # Description
 root = Tk()
@@ -16,27 +16,27 @@ root.resizable(width=False, height=False)
 menubar = Menu(root) 
 # option1
 file = Menu(menubar, tearoff=0)   
-file.add_command(label="Open")  
+file.add_command(label="Open", command=lambda: openmod.open_details(root))  
 file.add_command(label="Save", command=lambda: savemod.save_toplevel(root, result.get())) 
 file.add_command(label="Clear", command=lambda: clear.clear_radio_pass(result, var))    
 file.add_separator()  
 file.add_command(label="Close", command=root.quit)  
 menubar.add_cascade(label="File", menu=file) 
-# option2
-backup = Menu(menubar, tearoff=0)
-# sub-option2.1
-import1 = Menu(backup)
-import1.add_command(label="Database")  
-import1.add_command(label="SQL")  
-import1.add_command(label="Text") 
-backup.add_cascade(label="Import as...", menu=import1, underline=0) 
-# sub-option2.2
-export = Menu(backup)
-export.add_command(label="Database")  
-export.add_command(label="SQL")  
-export.add_command(label="Text")  
-backup.add_cascade(label="Export as...", menu=export, underline=0)
-menubar.add_cascade(label="Backup", menu=backup)
+# # option2
+# backup = Menu(menubar, tearoff=0)
+# # sub-option2.1
+# import1 = Menu(backup)
+# import1.add_command(label="Database")  
+# import1.add_command(label="SQL")  
+# import1.add_command(label="Text") 
+# backup.add_cascade(label="Import as...", menu=import1, underline=0) 
+# # sub-option2.2
+# export = Menu(backup)
+# export.add_command(label="Database")  
+# export.add_command(label="SQL")  
+# export.add_command(label="Text")  
+# backup.add_cascade(label="Export as...", menu=export, underline=0)
+# menubar.add_cascade(label="Backup", menu=backup)
 # option3
 menubar.add_cascade(label="About", command=about.about_app)
 root.config(menu=menubar)
@@ -72,7 +72,7 @@ result = Entry(root, width=30, borderwidth=2)
 result.grid(row=4, column=1, columnspan=4, pady=5)
 
 # Status bar
-status = Label(root, text="Version 1.0.3", bd=2, relief=SUNKEN, anchor=E)
+status = Label(root, text="Version 1.0.5", bd=2, relief=SUNKEN, anchor=E)
 status.grid(row=5, column=0, columnspan=4, sticky=W+E)
 
 root.mainloop()

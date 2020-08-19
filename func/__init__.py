@@ -5,3 +5,5 @@ from func import about
 from func import clear
 from func import genpass
 from func import db_insert
+from func import db_select
+from func import db_del_update
