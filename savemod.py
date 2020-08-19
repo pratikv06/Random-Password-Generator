@@ -1,7 +1,15 @@
 from tkinter import *
 from PIL import ImageTk, Image
+from tkinter import messagebox 
 
 from func import *
+
+def check_for_save(root, result, var):
+    print(result.get(), var.get())
+    if result.get() == '' or var.get() == 0 or var.get() == 99999:
+        messagebox.showwarning("Warning", "Generate Password First")
+    else:
+        save_toplevel(root, result.get())
 
 def save_toplevel(root, result):
     top = Toplevel(root)

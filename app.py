@@ -73,8 +73,17 @@ btn_submit.grid(row=3, column=1, columnspan=3)
 result = Entry(root, width=30, borderwidth=2)
 result.grid(row=4, column=1, columnspan=4, pady=5)
 
+# Save and clear button
+save_btn = Button(root, text="Save", font="Helvetica 10 bold", padx=15, 
+                    command=lambda: savemod.check_for_save(root, result, var))
+clear_btn =  Button(root, text="Clear", font="Helvetica 10 bold", padx=15,
+                    command=lambda: clear.clear_radio_pass(result, var))
+
+save_btn.grid(row=5, column=1, columnspan=2, pady=5)
+clear_btn.grid(row=5, column=2, columnspan=2, pady=5)
+
 # Status bar
 status = Label(root, text="Version 1.0.6", bd=2, relief=SUNKEN, anchor=E)
-status.grid(row=5, column=0, columnspan=4, sticky=W+E)
+status.grid(row=6, column=0, columnspan=4, sticky=W+E)
 
 root.mainloop()
