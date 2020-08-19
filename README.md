@@ -22,11 +22,11 @@ $ py app.py
 ```
 
 ## Sample
-- Generating Password
+- Generating Password  
 ![](extra/Sample.gif)
 
-- Generating password without selecting any option
+- Generating password without selecting any option  
 ![](extra/Warning.gif)
 
-- Clearing the selected option
+- Clearing the selected option  
 ![](extra/clear.gif)
